@@ -1,0 +1,59 @@
+
+joel@CBJ:~$ ll
+total 88
+drwxr-xr-x 1 joel joel   512 Jan 13 21:03 ./
+drwxr-xr-x 1 root root   512 May 28  2019 ../
+-rw------- 1 joel joel 11239 Jan 13 19:31 .bash_history
+-rw-r--r-- 1 joel joel   220 May 28  2019 .bash_logout
+-rw-r--r-- 1 joel joel  3771 May 28  2019 .bashrc
+drwxrwxrwx 1 joel joel   512 Jan  9 13:10 .cache/
+drwx------ 1 joel joel   512 Jul 29 10:23 .config/
+-rw-r--r-- 1 joel joel   807 May 28  2019 .profile
+drwx------ 1 joel joel   512 Oct 12 22:18 .ssh/
+-rw-r--r-- 1 joel joel     0 May 28  2019 .sudo_as_admin_successful
+-rw------- 1 joel joel 20360 Jan 13 21:03 .viminfo
+-rw-rw---- 1 joel joel   144 Jan 13 19:29 ddone
+-rwxrwxrwx 1 joel joel   309 Oct 23 22:03 fawk*
+-rw-rw-rw- 1 joel joel   336 Jan 13 21:03 ff
+-rw-rw-rw- 1 joel joel   523 Oct 23 22:08 ff.this
+-rw-rw-rw- 1 joel joel   387 Nov 24 23:35 ffmpeg.awk
+-rw-rw-rw- 1 joel joel  1101 Nov 30 23:45 ffmpeg.bak
+-rw-rw-rw- 1 joel joel   813 Nov 30 23:45 ffmpeg.done
+-rw-rw-rw- 1 joel joel 25852 Nov 30 23:45 ffmpeg.history
+-rw-rw-rw- 1 joel joel   169 Jan 13 19:29 ffmpeg.sed
+-rw-rw-rw- 1 joel joel   638 Nov 30 23:45 ffmpeg.temp
+-rw-rw-rw- 1 joel joel   754 Nov 30 23:45 ffmpeg.todo
+-rw-rw-rw- 1 joel joel    53 Aug  3 22:42 mntodo
+-rw-rw-rw- 1 joel joel    85 Jan 13 19:29 upd
+-rw-rw-r-- 1 joel joel   142 Jan 13 19:29 updone
+-rwxrwxrwx 1 joel joel   199 Jan  9 20:39 ytda*
+joel@CBJ:~$ cat ff
+while [ -s /mnt/cifs/129/TODO/ffmpeg.todo ]
+do
+sed -e '2,$d;s/\r//' /mnt/cifs/129/TODO/ffmpeg.todo > ffmpeg.temp
+sed -i -e '1d' /mnt/cifs/129/TODO/ffmpeg.todo
+cut -f 1,6 ffmpeg.temp >> ffmpeg.done
+awk '{print strftime("%m%d-%H%M%S") "\t" $0}' ffmpeg.temp >> ffmpeg.history
+awk -f ffmpeg.awk ffmpeg.temp > ffmpeg.todo
+. ffmpeg.todo
+done
+joel@CBJ:~$ cat fawk
+#!/usr/bin/awk -f
+BEGIN {
+        FS="\t"; OFS=" ";
+}
+{
+        $1 = "ffmpeg -i \"/mnt/blah/" $1 "\" -f mp4";
+        if (! length($2)) $2 = "-map 0:v -map 0:a";
+        if (! length($3)) $3 = "-c:v copy"; $3 = $3 " -movflags +faststart"
+        if (! length($4)) $4 = "-c:a copy";
+        m = $5;
+        $6 = "\"" $6 ".mp4\"";
+        $5 = $4;
+        $4 = m;
+        print
+}
+joel@CBJ:~$ cat ff
+
+-  [FFmpeg Utilities Documentation](https://ffmpeg.org/ffmpeg-utils.html#time-duration-syntax") 
+-  [AudioChannelManipulation – FFmpeg](https://trac.ffmpeg.org/wiki/AudioChannelManipulation") 

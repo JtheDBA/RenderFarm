@@ -1,0 +1,11 @@
+mount.cifs //192.168.0.144/_TODO    /home/joel/_TODO
+while [ -s /home/joel/_TODO/ffmpeg.todo ]
+do
+sed -e '2,$d;s/\r//' /home/joel/_TODO/ffmpeg.todo > ffmpeg.temp
+sed -i -e '1d' /home/joel/_TODO/ffmpeg.todo
+cut -f 1,6 ffmpeg.temp >> ffmpeg.done
+awk '{print strftime("%m%d-%H%M%S") "\t" $0}' ffmpeg.temp >> ffmpeg.history
+awk -f ffmpeg.awk ffmpeg.temp > ffmpeg.todo
+. ffmpeg.todo
+done
+shutdown -h 1; exit
