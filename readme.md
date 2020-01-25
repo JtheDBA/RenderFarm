@@ -58,14 +58,14 @@ and as a base for other purposes. There are hundreds of others available.
 
 The destination device can be the same as a source if you are using a server to play videos on your local network or can be another computer or a storage device that also performs the same function in addition to the other functions and performs.
 
-- AMD FX-8320E 65W 8 core CPU, Windows 10, with separate disks for
+- AMD FX-8320E 65W 8 core CPU, Windows 10, with separate disks for source and finished files
 - Synology DS-218+ running Plex
 
 # Software
 
 ## Video
 
--  [Make MKV]() used to decrypt DVD and Blu-ray contents to. MKV files to be used as source files to encode for backup or for your online collection
+-  [Make MKV](https://www.makemkv.com) used to decrypt DVD and Blu-ray contents to. MKV files to be used as source files to encode for backup or for your online collection
 -  [Builds - Zeranoe FFmpeg](https://FFmpeg.zeranoe.com/builds/) the Windows builds for the video encoder
 -  [HandBrake](https://HandBrake.fr/) a very good video encoder with a GUI that helps determine cropping and formatting
 -  [MediaInfo](https://mediaarea.net/en/MediaInfo) a good utility that integrates with the Windows Explorer and will document all components in all video streams
