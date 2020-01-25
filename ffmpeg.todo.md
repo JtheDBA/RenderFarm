@@ -2,7 +2,7 @@
 
 The `ffmpeg.todo` file is a simple text file used to control the rendering farm encoding process using one line for each source video and each line containing tab delimited values used to tell the FFMPEG encoder what to do.
 
-I have used the [Rokoding][1] site for years as the standard for what I would do in HandBrake and used the [FFmpeg Wiki][2] or [FFmpeg Full Documentation][3] to convert to the `FFmpeg` equivalents.
+I have used the [Rokoding](http://rokoding.com) site for years as the standard for what I would do in HandBrake and used the [FFmpeg Wiki](https://trac.ffmpeg.org/wiki) or [FFmpeg Full Documentation](https://ffmpeg.org/documentation.html) to convert to the `FFmpeg` equivalents.
 
 ## Format of the Control File
 
@@ -68,7 +68,7 @@ Example: `-c:v libx264 -preset veryslow -crf 18 -tune film -profile:v high -leve
 
 Metadata to pass, defaults to setting the language to English and nothing else.
 
-Read [FFmpeg Metadata](https://wiki.multimedia.cx/index.php/FFmpeg_Metadata#QuickTime.2FMOV.2FMP4.2FM4A.2Fet_al.) on the [MultimediaWiki][4] for supported metadata. I usually include the following:
+Read [FFmpeg Metadata](https://wiki.multimedia.cx/index.php/FFmpeg_Metadata#QuickTime.2FMOV.2FMP4.2FM4A.2Fet_al.) on the [MultimediaWiki](https://wiki.multimedia.cx/index.php/Main_Page) for supported metadata. I usually include the following:
 
 -  `title`
 -  `author` - director and writer(s)
@@ -93,7 +93,7 @@ I find that tablets, phones and other devices will automatically convert the AC3
 
 The only filter I use is [dynaudnorm](https://ffmpeg.org/ffmpeg-all.html#dynaudnorm) when encoding the AAC track to "even out" the volume of quiet and loud sections, in the sense that the volume of each section is brought to the same target level.
 
-According to [Rokoding][1] the gain on the AAC track should be set to 2 for AC3 and 3 for DTS input tracks, which would require the [volume](https://ffmpeg.org/ffmpeg-all.html#volume) filter i.e. `volume=volume=2dB:precision=fixed`.
+According to [Rokoding](http://rokoding.com) the gain on the AAC track should be set to 2 for AC3 and 3 for DTS input tracks, which would require the [volume](https://ffmpeg.org/ffmpeg-all.html#volume) filter i.e. `volume=volume=2dB:precision=fixed`.
 
 ### CODEC
 
@@ -101,7 +101,7 @@ Instead of going through the various audio CODECs and what to do, cannot do, whi
 
 -  my default AAC audio, simple and minimal
 -  same as above with not one but two commentary tracks added
--  my default adjusted for [Rokoding][1] assuming gain for an AC3 source audio track
+-  my default adjusted for [Rokoding](http://rokoding.com) assuming gain for an AC3 source audio track
 -  same as above but for a DTS source audio track
 -  default AAC audio plus an AC3 track as is from the source
 -  default AAC audio plus an AC3 track reencoded to a 384k bit rate for smaller size but still good minimal quality 
@@ -126,10 +126,10 @@ The full name of the output video file without the extension; example `Dexter - 
 
 # Resources
 
-- [1]: http://rokoding.com
-- [2]: https://trac.ffmpeg.org/wiki
-- [3]: https://ffmpeg.org/documentation.html
-- [4]: https://wiki.multimedia.cx/index.php/Main_Page
+- [Rokoding](http://rokoding.com)
+- [FFmpeg Wiki](https://trac.ffmpeg.org/wiki)
+- [FFmpeg Full Documentation](https://ffmpeg.org/documentation.html)
+- [MultimediaWiki](https://wiki.multimedia.cx/index.php/Main_Page)
 
 Video
 
