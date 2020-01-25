@@ -127,8 +127,8 @@ The full name of the output video file without the extension; example `Dexter - 
 # Resources
 
 - [1]: http://rokoding.com
-- [2](https://trac.ffmpeg.org/wiki)
-- [3](https://ffmpeg.org/documentation.html)
+- [2]: https://trac.ffmpeg.org/wiki
+- [3]: https://ffmpeg.org/documentation.html
 - [4]: https://wiki.multimedia.cx/index.php/Main_Page
 
 Video
