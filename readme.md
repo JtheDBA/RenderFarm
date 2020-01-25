@@ -65,11 +65,11 @@ The destination device can be the same as a source if you are using a server to 
 
 ## Video
 
--  [Make MKV]() Used to decrypt DVD and Blu-ray contents to. MKV files to be used as source files to encode for backup or for your online collection
--  [Builds - Zeranoe FFmpeg](https://FFmpeg.zeranoe.com/builds/) The wind is billed for the video encoder
--  [HandBrake](https://HandBrake.fr/) HandBrake; a very good video encoder with a GUI that helps determine cropping and formatting were to do the actual videoing code
+-  [Make MKV]() used to decrypt DVD and Blu-ray contents to. MKV files to be used as source files to encode for backup or for your online collection
+-  [Builds - Zeranoe FFmpeg](https://FFmpeg.zeranoe.com/builds/) the Windows builds for the video encoder
+-  [HandBrake](https://HandBrake.fr/) a very good video encoder with a GUI that helps determine cropping and formatting
 -  [MediaInfo](https://mediaarea.net/en/MediaInfo) a good utility that integrates with the Windows Explorer and will document all components in all video streams
--  [VLC Media Player](https://www.videolan.org/vlc/download-windows.html) a very commonly used player for Windows
+-  [VLC Media Player](https://www.videolan.org/vlc/download-windows.html) a very commonly used player for Windows and Linux
 -  [SubtitleEdit](https://github.com/SubtitleEdit/subtitleedit/releases) if you like to do subtitles yourself, uses software
 -  [MKVToolNix](https://www.fosshub.com/MKVToolNix.html) these utilities come in handy sometimes
 
@@ -82,10 +82,4 @@ In fact if I am only encoding a few videos I will usually use HandBrake to do th
 ## Linux
 
 - [Ubuntu 18.04 Installation/Minimal CD](https://help.ubuntu.com/community/Installation/MinimalCD) - found this just works...
-
-# Resources
-
-https://FFmpeg.org/documentation.html
-
-
 
