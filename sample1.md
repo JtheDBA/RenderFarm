@@ -4,7 +4,7 @@ This process is what I do and likely will not match what you do. It can however,
 
 ## Objective
 
-Reencode Dexter Season One from DVD to .mp4 for Plex servers. Also test my Excel workbook TV worksheet. 
+Reencode Dexter Season One from DVD to .mp4 for Plex servers. Season One is interlaced at 29.97 fps and will test the various deinterlace options. Also test my Excel workbook TV worksheet. 
 
 ## Steps
 
@@ -17,6 +17,10 @@ Reencode Dexter Season One from DVD to .mp4 for Plex servers. Also test my Excel
 - [X] start of the slave machines and begin running the process
 - [X] start the process on the source machine as well
 - [X] when complete simply move the files from the slave machines to the target on the target machine ( which in my case is the same as the source )
+- [X] hmm, results look odd let's try different filters
+- [X] find best filter combination for FFmpeg file size compared to Handbrake
+- [ ] find best filter combination for visual results FFmpeg compared to Handbrake
+- [ ] choose best filter combination for FFmpeg deinterlacing
 
 ## Results
 
@@ -46,9 +50,36 @@ The files encoded with Handbrake using the exact same options used with FFmpeg c
 
 Handbrake added five additional properties to their output according to MediaInfo:
 
-- Original display aspect ratio - 16:9
-- Color range - Limited
-- Color primaries - BT.601 NTSC
-- Transfer characteristics - BT.601
-- Matrix coefficients - BT.601
+-  Original display aspect ratio - 16:9
+-  Color range - Limited
+-  Color primaries - BT.601 NTSC
+-  Transfer characteristics - BT.601
+-  Matrix coefficients - BT.601
+
+I tried rerunning with different filters; results:
+
+| Handbrake MB | yadif MB | diff MB | diff % | filter | new MB | HB diff % | yadif-f %
+| ---: | ---: | ---: | ---: | :--- | ---: | ---: | ---:
+| 512.92 | 605.05 | 92.13 | 1.1796 | vf yadif=1 | 603.47 | 1.176 | 0.997
+| 555.47 | 654.55 | 99.08 | 1.1783 | vf yadif,atadenoise | 580.72 | 1.045 | 0.887
+| 701.32 | 813.86 | 112.54 | 1.160 | vf yadif=1,atadenoise | 772.73 | 1.101 | 0.949
+| 662.13 | 775.06 | 112.93 | 1.170 | vf kerndeint | 863.18 | 1.303 | 1.113
+
+### Best Size
+
+Handbrake still wins but deinterlace and denoise is definitely best. The kerndeint filter is excluded on size alone.
+
+-  vf yadif
+-  vf yadif=1
+-  **vf yadif,atadenoise**
+-  vf yadif=1,atadenoise
+
+### Best Quality
+
+-  vf yadif
+-  vf yadif=1
+-  vf yadif,atadenoise
+-  vf yadif=1,atadenoise
+
+## Verdict
 
