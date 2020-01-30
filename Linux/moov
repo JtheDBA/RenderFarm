@@ -1,2 +1,2 @@
-mount.cifs //192.168.0.144/_DONE    /home/joel/_DONE
-mv /~/DONE/* /home/joel/_DONE
+mount.cifs //192.168.0.144/_DONE    /mnt/_DONE
+mv /srv/DONE/* /mnt/_DONE
