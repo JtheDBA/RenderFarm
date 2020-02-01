@@ -35,7 +35,7 @@ Simply listing my hardware here as an example:
 
 ## Source
 
-The primary purpose of the source device is the store video source files and the one control file used to control the process. The source device could be a computer or network storage device. The source computer can also be used for copying 
+The primary purpose of the source device is the store video source files and the one control file used to control the process. The source device could be a computer or network storage device. A source computer can also be used for copying 
 or "ripping" files from an encrypted source like a DVD or Blu-ray disc two the source device for encoding. I will not provide a tutorial on how to do this as there are hundreds of them on the Internet but it is a requirement if you are 
 backing up and/or converting your collection to a smaller more accessible local network distributable format.
 
@@ -81,9 +81,8 @@ The destination device can be the same as a source if you are using a server to 
 
 The primary reason am not using HandBrake is in my opinion the HandBrake batch command line system is changing too frequently and only the most current builds of Linux contain code that will match and potentially work with the same code
 available under Windows. Where FFmpeg simply works wherever you have it installed. When comparing HandBrake to FFmpeg for encoding performance, convenience, and final encoding size and results the GUI for Windows is very good.
-In fact if I am only encoding a few videos I will usually use HandBrake to do the encoding than use the scripts to copy the files using FFmpeg to their final location.
+In fact if I am only encoding a few videos I will usually use HandBrake to do the encoding then use the scripts to add metadata and copy the files using FFmpeg to their final location.
 
 ## Linux
 
 - [Ubuntu 18.04 Installation/Minimal CD](https://help.ubuntu.com/community/Installation/MinimalCD) - found this just works...
-

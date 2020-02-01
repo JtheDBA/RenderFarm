@@ -19,8 +19,8 @@ Reencode Dexter Season One from DVD to .mp4 for Plex servers. Season One is inte
 - [X] when complete simply move the files from the slave machines to the target on the target machine ( which in my case is the same as the source )
 - [X] hmm, results look odd let's try different filters
 - [X] find best filter combination for FFmpeg file size compared to Handbrake
-- [ ] find best filter combination for visual results FFmpeg compared to Handbrake
-- [ ] choose best filter combination for FFmpeg deinterlacing
+- [X] find best filter combination for visual results FFmpeg compared to Handbrake
+- [X] choose best filter combination for FFmpeg deinterlacing
 
 ## Results
 
@@ -76,10 +76,13 @@ Handbrake still wins but deinterlace and denoise is definitely best. The kerndei
 
 ### Best Quality
 
+There were no significant differences between any of the encoding processes. I attempted to study light and dark sections, still and high action sections and typical difficult encoding items like fire or water fountains
+and if you look very closely frame by frame can see a slight difference and both HandBrake and the `vf yadif,atadenoise` filter seemed to be almost identical in quality so I guess the winner in this category same as the previous one.
 -  vf yadif
 -  vf yadif=1
--  vf yadif,atadenoise
+-  **vf yadif,atadenoise**
 -  vf yadif=1,atadenoise
 
 ## Verdict
 
+Use filter `-vf yadif,atadenoise` on interlaced DVD source material.
