@@ -7,6 +7,10 @@ services for one additional human being and three cats in our meager four level 
 
 If you were given this repository by me, hi there. Hopefully you find something here that is usable and might save you time and frustration. Feel free to contribute, laugh at me, buy me a beer or six or just nerd up with me.
 
+Updates
+
+-  1/31/2020 10:26:21 PM - considered out of "beta" and has been tested on everything I know of and have possession of. Yes, I have had a beer - or five...
+
 ## Standard Disclaimers
 
 *Do not assume I know what I am doing or anything should be used outside of personal experimentation and learning. All comments are my own and do not reflect the thoughts or direction of my employer, family, friends,
@@ -46,7 +50,7 @@ The slave devices will likely be computers; the old ones you have laying around 
 over and over and over and over and over and over and over again without having to find the disk and loaded somewhere. I use Ubuntu 18.04 Mini and have found this is easiest of the minimal Linux servers to install and use for this purpose 
 and as a base for other purposes. There are hundreds of others available.
 
-- AMD FX Vishera 65W 8 core CPU, Ubuntu Server
+- AMD FX Vishera 125W 8 core CPU, Ubuntu Server
 - AMD FX Vishera 65W 6 core CPU, Ubuntu Server
 - Intel i3 Haswell 4th gen 2 core x 2 threads, Windows 10 Home
 - Intel i5 Haswell 4th gen 4 core CPU, Ubuntu Server

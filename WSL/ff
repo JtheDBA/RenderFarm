@@ -1,5 +1,5 @@
-mount.cifs //192.168.0.144/_TODO    /home/joel/_TODO
-mount.cifs //192.168.0.144/_DONE    /home/joel/_DONE
+sudo mount -t drvfs '//192.168.0.144/_TODO' /home/joel/_TODO
+sudo mount -t drvfs '//192.168.0.144/_DONE' /home/joel/_DONE
 while [ -s /home/joel/_TODO/ffmpeg.todo ]
 do
 sed -e 's/\r//' /home/joel/_TODO/ffmpeg.todo > ffmpeg.temp
@@ -10,4 +10,4 @@ awk -f ffmpeg.awk ffmpeg.temp > ffmpeg.todo
 . ffmpeg.todo
 awk '{print strftime("%m%d-%H%M%S") "\tDone..."}' ffmpeg.temp >> ffmpeg.history
 done
-shutdown -h 1; exit
+exit

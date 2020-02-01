@@ -1,7 +1,7 @@
 BEGIN {
  FS="\t"; OFS=" "
  TODO="/home/joel/_TODO/"
- WORK="/home/joel/_WORK/"
+ WORK="/mnt/c/Users/Joel/Videos/"
  DONE="/home/joel/_DONE/"
 }
 {
